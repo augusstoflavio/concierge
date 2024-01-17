@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("url")->nullable(false);
             $table->string("method")->nullable(false);
             $table->string("data")->nullable(false);
-            $table->unsignedBigInteger('system_id')->nullable(false);
+            $table->uuid("system_id")->nullable(false);
             $table->foreign('system_id')->references('id')->on('systems');
             $table->softDeletes();
             $table->timestamps();
